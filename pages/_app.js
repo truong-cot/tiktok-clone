@@ -1,5 +1,5 @@
 import '../styles/globals.scss';
-import DefaultLayout from '../components/layout/DefaultLayout';
+import Layout from '../components/layout';
 
 function MyApp({ Component, pageProps }) {
   const LayoutPage = Component.Layout;
@@ -9,9 +9,9 @@ function MyApp({ Component, pageProps }) {
       {LayoutPage ? (
         <Component.Layout {...pageProps} />
       ) : (
-        <DefaultLayout>
+        <Layout>
           <Component {...pageProps} />
-        </DefaultLayout>
+        </Layout>
       )}
     </>
   );

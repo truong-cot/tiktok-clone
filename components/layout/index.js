@@ -1,9 +1,9 @@
-import Header from './Header';
-import Sidebar from './Sidebar';
+import Header from '../widgets/Header';
+import Sidebar from '../widgets/Sidebar';
 
-import styles from './DefaultLayout.module.scss';
+import styles from './Layout.module.scss';
 
-function DefaultLayout({ children, header = true, sidebar = true }) {
+function Layout({ children, header = true, sidebar = true }) {
   return (
     <div>
       {header && <Header />}
@@ -15,4 +15,4 @@ function DefaultLayout({ children, header = true, sidebar = true }) {
   );
 }
 
-export default DefaultLayout;
+export default Layout;

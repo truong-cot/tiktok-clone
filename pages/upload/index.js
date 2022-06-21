@@ -1,4 +1,4 @@
-import DefaultLayout from '../../components/layout/DefaultLayout';
+import Layout from '../../components/layout';
 
 function Upload() {
   return <div>Upload</div>;
@@ -8,8 +8,8 @@ export default Upload;
 
 Upload.Layout = function LayoutPage() {
   return (
-    <DefaultLayout header={true} sidebar={false}>
+    <Layout header={true} sidebar={false}>
       <Upload />
-    </DefaultLayout>
+    </Layout>
   );
 };
