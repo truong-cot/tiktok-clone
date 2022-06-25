@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  margin-left: 0;
+  padding: 9px 16px;
+
+  &:hover {
+    background: rgba(22, 24, 35, 0.03);
+  }
+
+  .avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 12px;
+  }
+
+  .content {
+    .name {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .userName {
+      font-size: 14px;
+      line-height: 20px;
+      color: rgba(22, 24, 35, 0.5);
+      font-weight: 400;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

@@ -5,7 +5,7 @@ import styles from './Layout.module.scss';
 
 function Layout({ children, header = true, sidebar = true }) {
   return (
-    <div>
+    <div className={styles.wrapper}>
       {header && <Header />}
       <div className={styles.container}>
         {sidebar && <Sidebar />}
