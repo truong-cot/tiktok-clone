@@ -5,8 +5,6 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faMagnifyingGlass,
-  faSpinner,
   faEllipsisVertical,
   faEarthAsia,
   faQuestion,
@@ -18,14 +16,21 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import Menu from '../../Menu';
-import AccountItem from './AccountItem';
+import Search from './Search';
 import Button from '../../control/Button';
 import images from '../../../assets/images';
 import styles from './Header.module.scss';
 
 function Header() {
-  const [searchResult, setSearchResult] = useState([]);
+  // Check login
+  const isLogin = true;
 
+  // Handle login item
+  const handleChange = (menuItem) => {
+    console.log(menuItem);
+  };
+
+  // Khai bao menu chưa đăng nhập
   const MENU_ITEMS = [
     {
       icon: <FontAwesomeIcon icon={faEarthAsia} />,
@@ -57,6 +62,7 @@ function Header() {
     },
   ];
 
+  // Khai bao menu đã đăng nhập
   const MENU_ITEMS_LOGIN = [
     {
       icon: <FontAwesomeIcon icon={faUser} />,
@@ -100,14 +106,6 @@ function Header() {
     },
   ];
 
-  // Handle login item
-  const handleChange = (menuItem) => {
-    console.log(menuItem);
-  };
-
-  // Check login
-  const isLogin = true;
-
   return (
     <div className={styles.container}>
       <div className="container">
@@ -120,30 +118,7 @@ function Header() {
             </Link>
           </div>
 
-          <Tippy
-            visible={searchResult > 0}
-            interactive={true}
-            render={(attrs) => (
-              <div className={styles.searchResult} tabIndex="-1" {...attrs}>
-                <h3 className={styles.title}>Tài khoản</h3>
-                <div className={styles.listAccount}>
-                  <AccountItem />
-                  <AccountItem />
-                  <AccountItem />
-                </div>
-              </div>
-            )}
-          >
-            <div className={styles.search}>
-              <input placeholder="Tìm kiếm tài khoản và video" spellCheck={false} />
-              <button className={styles.btnClear}>{/* <FontAwesomeIcon icon={faCircleXmark} /> */}</button>
-              <FontAwesomeIcon className={styles.iconLoading} icon={faSpinner} />
-
-              <button className={styles.btnSearch}>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-              </button>
-            </div>
-          </Tippy>
+          <Search />
 
           <div className={styles.actions}>
             {isLogin ? (
