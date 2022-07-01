@@ -1,17 +1,21 @@
-import React, { useState, useRef } from 'react';
-import Tippy from '@tippyjs/react/headless';
+import React, { useState, useRef, useEffect } from 'react';
 import 'tippy.js/dist/tippy.css';
+import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faSpinner, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+
+import useDebounce from '../../../../hooks/useDebounce';
+import searchApi from '../../../../api/searchUser';
 import AccountItem from '../AccountItem';
+import { faMagnifyingGlass, faSpinner, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './Search.module.scss';
 
 function Search() {
-  const [showResult, setShowResult] = useState(true);
   const [searchValue, setSearchValue] = useState('');
-  const [searchResult, setSearchResult] = useState([1, 2]);
+  const [showResult, setShowResult] = useState(true);
+  const [searchResult, setSearchResult] = useState([]);
 
   const inputRef = useRef();
+  const debounced = useDebounce(searchValue, 500);
 
   // Hàm xử lý
   const handleClear = () => {
@@ -20,25 +24,43 @@ function Search() {
     inputRef.current.focus();
   };
 
-  const handleHideResult = () => {
-    setShowResult(false);
+  const handleChange = (e) => {
+    const searchValue = e.target.value;
+    if (!searchValue.startsWith(' ')) {
+      setSearchValue(searchValue);
+    }
   };
+
+  // call api
+  useEffect(() => {
+    if (searchValue.trim()) {
+      const searchUser = async () => {
+        try {
+          const res = await searchApi.searchUser(encodeURIComponent(debounced));
+          setSearchResult(res.data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+      searchUser();
+    }
+  }, [debounced, searchValue]);
 
   return (
     <Tippy
-      visible={showResult && searchResult.length > 0}
+      visible={showResult && searchResult?.length > 0 && searchValue != ''}
       interactive={true}
       render={(attrs) => (
         <div className={styles.searchResult} tabIndex="-1" {...attrs}>
           <h3 className={styles.title}>Tài khoản</h3>
           <div className={styles.listAccount}>
-            <AccountItem />
-            <AccountItem />
-            <AccountItem />
+            {searchResult.map((item) => (
+              <AccountItem key={item.id} data={item} />
+            ))}
           </div>
         </div>
       )}
-      onClickOutside={handleHideResult}
+      onClickOutside={() => setShowResult(false)}
     >
       <div className={styles.search}>
         <input
@@ -46,7 +68,7 @@ function Search() {
           value={searchValue}
           placeholder="Tìm kiếm tài khoản và video"
           spellCheck={false}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handleChange}
           onFocus={() => setShowResult(true)}
         />
 

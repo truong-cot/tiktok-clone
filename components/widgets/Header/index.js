@@ -141,7 +141,7 @@ function Header() {
 
                 <Menu items={MENU_ITEMS_LOGIN} onChange={handleChange}>
                   <div className={styles.avatar}>
-                    <Image src={images.avatar} alt="avatar" />
+                    <Image src={images.avatar} alt="avatar" layout="fill" />
                   </div>
                 </Menu>
               </div>

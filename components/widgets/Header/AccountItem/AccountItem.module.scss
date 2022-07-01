@@ -10,6 +10,7 @@
   }
 
   .avatar {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +18,10 @@
     height: 40px;
     object-fit: cover;
     margin-right: 12px;
+
+    img {
+      border-radius: 50%;
+    }
   }
 
   .content {

@@ -5,7 +5,7 @@ const axiosClient = axios.create({
   headers: {
     'content-type': 'application/json',
   },
-  baseURL: 'https://tiktok.fullstack.edu.vn/api',
+  baseURL: 'https://tiktok.fullstack.edu.vn/api/',
   paramsSerializer: (params) => queryString.stringify(params),
 });
 
