@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 

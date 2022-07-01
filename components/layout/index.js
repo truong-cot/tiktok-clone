@@ -1,6 +1,7 @@
+import React from 'react';
+
 import Header from '../widgets/Header';
 import Sidebar from '../widgets/Sidebar';
-
 import styles from './Layout.module.scss';
 
 function Layout({ children, header = true, sidebar = true }) {

@@ -1,20 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faEllipsisVertical,
-  faEarthAsia,
-  faQuestion,
-  faKeyboard,
-  faPlus,
-  faUser,
-  faGear,
-  faRightFromBracket,
-} from '@fortawesome/free-solid-svg-icons';
+import { faEllipsisVertical, faPlus } from '@fortawesome/free-solid-svg-icons';
 
+import MENU_ITEMS from '../../../common/variables/menuItems';
+import MENU_ITEMS_LOGIN from '../../../common/variables/menuItemLogin';
 import Menu from '../../Menu';
 import Search from './Search';
 import Button from '../../control/Button';
@@ -29,82 +22,6 @@ function Header() {
   const handleChange = (menuItem) => {
     console.log(menuItem);
   };
-
-  // Khai bao menu chưa đăng nhập
-  const MENU_ITEMS = [
-    {
-      icon: <FontAwesomeIcon icon={faEarthAsia} />,
-      title: 'English',
-      children: {
-        title: 'Ngôn ngữ',
-        data: [
-          {
-            type: 'language', // handle theo type
-            code: 'vi',
-            title: 'Tiếng việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-        ],
-      },
-    },
-    {
-      icon: <FontAwesomeIcon icon={faQuestion} />,
-      title: 'Phản hồi và trợ giúp',
-      to: 'feedback',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faKeyboard} />,
-      title: 'Phím tắt trên bàn phím',
-    },
-  ];
-
-  // Khai bao menu đã đăng nhập
-  const MENU_ITEMS_LOGIN = [
-    {
-      icon: <FontAwesomeIcon icon={faUser} />,
-      title: 'Trang cá nhân',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faGear} />,
-      title: 'Cài đặt',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faEarthAsia} />,
-      title: 'English',
-      children: {
-        title: 'Ngôn ngữ',
-        data: [
-          {
-            type: 'language', // handle theo type
-            code: 'vi',
-            title: 'Tiếng việt',
-          },
-          {
-            type: 'language',
-            code: 'en',
-            title: 'English',
-          },
-        ],
-      },
-    },
-    {
-      icon: <FontAwesomeIcon icon={faQuestion} />,
-      title: 'Phản hồi và trợ giúp',
-      to: 'feedback',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faKeyboard} />,
-      title: 'Phím tắt trên bàn phím',
-    },
-    {
-      icon: <FontAwesomeIcon icon={faRightFromBracket} />,
-      title: 'Đăng xuất',
-    },
-  ];
 
   return (
     <div className={styles.container}>

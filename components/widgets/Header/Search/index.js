@@ -3,10 +3,10 @@ import 'tippy.js/dist/tippy.css';
 import Tippy from '@tippyjs/react/headless';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import useDebounce from '../../../../hooks/useDebounce';
-import searchApi from '../../../../api/searchUser';
 import AccountItem from '../AccountItem';
-import { faMagnifyingGlass, faSpinner, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import searchApi from '../../../../api/searchUser';
+import useDebounce from '../../../../common/hooks/useDebounce';
+import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './Search.module.scss';
 
 function Search() {

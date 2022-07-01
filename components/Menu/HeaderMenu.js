@@ -1,7 +1,8 @@
-import styles from './Menu.module.scss';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+
+import styles from './Menu.module.scss';
 
 function HeaderMenu({ title, onBack }) {
   return (

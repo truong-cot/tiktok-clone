@@ -1,10 +1,12 @@
-import styles from './Menu.module.scss';
+import { useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
+
 import MenuItem from './MenuItem';
 import HeaderMenu from './HeaderMenu';
-import { useState } from 'react';
+import styles from './Menu.module.scss';
 
+// fix lỗi lần đầu render
 const defaultFn = () => {};
 
 function Menu({ children, items = [], onChange = defaultFn }) {
@@ -26,24 +28,26 @@ function Menu({ children, items = [], onChange = defaultFn }) {
               }}
             />
           )}
-          {current.data.map((item, index) => {
-            // Kiểm tra item có children
-            const isParent = !!item.children;
+          <div className={styles.menuItemBody}>
+            {current.data.map((item, index) => {
+              // Kiểm tra item có children
+              const isParent = !!item.children;
 
-            return (
-              <MenuItem
-                key={index}
-                data={item}
-                onClick={() => {
-                  if (isParent) {
-                    setHistory((prev) => [...prev, item.children]);
-                  } else {
-                    onChange(item); // Lấy ra item
-                  }
-                }}
-              />
-            );
-          })}
+              return (
+                <MenuItem
+                  key={index}
+                  data={item}
+                  onClick={() => {
+                    if (isParent) {
+                      setHistory((prev) => [...prev, item.children]);
+                    } else {
+                      onChange(item); // Lấy ra item
+                    }
+                  }}
+                />
+              );
+            })}
+          </div>
         </div>
       )}
     >
