@@ -1,4 +1,19 @@
-.container {
-  min-height: 1000px;
-  width: 100%;
+.sideBar {
+  padding: 20px 0 26px;
+
+  .line {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+  }
+
+  .title {
+    padding-top: 16px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(22, 24, 35, 0.75);
+    font-family: 'ProximaNova', sans-serif;
+    font-weight: 600;
+  }
 }

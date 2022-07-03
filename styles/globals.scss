@@ -14,7 +14,7 @@
   --default-layout-horizontal-spacer: 24px;
 }
 
-// Fonts
+// Fonts emmbeded
 @font-face {
   font-family: ProximaNova;
   src: url('../assets/fonts/Proxima-Nova-Regular.woff2');
@@ -33,30 +33,27 @@
   font-weight: 700;
 }
 
+@font-face {
+  font-family: ProximaNova;
+  src: url('../assets/fonts/Proxima-Nova-Bold.woff2');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: SofiaPro;
+  src: url('../assets/fonts/sofiapro-bold.woff2');
+  font-weight: 700;
+}
+
 // scrollbar
 html *::-webkit-scrollbar {
   border-radius: 0;
   width: 8px;
 }
 
-html *::-webkit-scrollbar {
-  border-radius: 0;
-  width: 8px;
-}
-
 html *::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.15);
-}
-
-html *::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.15);
-}
-
-html *::-webkit-scrollbar-track {
-  border-radius: 0;
-  background-color: rgba(0, 0, 0, 0);
 }
 
 html *::-webkit-scrollbar-track {
@@ -96,31 +93,6 @@ a {
   text-decoration: none;
 }
 
-// Fonts emmbeded
-@font-face {
-  font-family: ProximaNova;
-  src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: ProximaNova;
-  src: url('/assets/fonts/ProximaNova-Semibold.woff2');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: ProximaNova;
-  src: url('/assets/fonts/Proxima-Nova-Bold.woff');
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: SofiaPro;
-  src: url('/assets/fonts/sofiapro-bold.woff');
-  font-weight: 700;
-}
-
 // Custom tippy tooltip
 body {
   .tippy-box {
@@ -144,6 +116,7 @@ body {
   }
 }
 
+// CSS globals
 .container {
   max-width: 1150px;
   margin: 0 auto;

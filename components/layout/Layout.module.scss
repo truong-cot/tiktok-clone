@@ -1,5 +1,4 @@
 .wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,6 +6,20 @@
 
 .container {
   width: 1150px;
-  display: grid;
-  grid-template-columns: 3fr 7fr;
+  max-width: 100%;
+  display: flex;
+
+  .sidebar {
+    width: 348px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    overflow-y: scroll;
+  }
+
+  .content {
+    position: relative;
+    min-height: 2000px;
+    margin-left: 350px;
+  }
 }

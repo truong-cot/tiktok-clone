@@ -25,56 +25,54 @@ function Header() {
 
   return (
     <div className={styles.container}>
-      <div className="container">
-        <div className={styles.main}>
-          <div className={styles.logo}>
-            <Link href="/">
-              <a>
-                <Image src={images.logo} alt="logo" />
-              </a>
-            </Link>
-          </div>
+      <div className={styles.main}>
+        <div className={styles.logo}>
+          <Link href="/">
+            <a>
+              <Image src={images.logo} alt="logo" />
+            </a>
+          </Link>
+        </div>
 
-          <Search />
+        <Search />
 
-          <div className={styles.actions}>
-            {isLogin ? (
-              <div className={styles.headerLogin}>
-                <Button href="upload" leftIcon={<FontAwesomeIcon icon={faPlus} />} outline2>
-                  Tải lên
-                </Button>
+        <div className={styles.actions}>
+          {isLogin ? (
+            <div className={styles.headerLogin}>
+              <Button href="upload" leftIcon={<FontAwesomeIcon icon={faPlus} />} outline2>
+                Tải lên
+              </Button>
 
-                <Tippy content="Tin nhắn">
-                  <button className={styles.iconMessage}>
-                    <Image src={images.message} alt="icon" />
-                  </button>
-                </Tippy>
+              <Tippy content="Tin nhắn">
+                <button className={styles.iconMessage}>
+                  <Image src={images.message} alt="icon" />
+                </button>
+              </Tippy>
 
-                <Tippy content="Hộp thư">
-                  <button className={styles.iconMail}>
-                    <Image src={images.mail} alt="icon" />
-                  </button>
-                </Tippy>
+              <Tippy content="Hộp thư">
+                <button className={styles.iconMail}>
+                  <Image src={images.mail} alt="icon" />
+                </button>
+              </Tippy>
 
-                <Menu items={MENU_ITEMS_LOGIN} onChange={handleChange}>
-                  <div className={styles.avatar}>
-                    <Image src={images.avatar} alt="avatar" layout="fill" />
-                  </div>
-                </Menu>
-              </div>
-            ) : (
-              <>
-                <Button text>Tải lên</Button>
-                <Button primary>Đăng nhập</Button>
+              <Menu items={MENU_ITEMS_LOGIN} onChange={handleChange}>
+                <div className={styles.avatar}>
+                  <Image src={images.avatar} alt="avatar" layout="fill" />
+                </div>
+              </Menu>
+            </div>
+          ) : (
+            <>
+              <Button text>Tải lên</Button>
+              <Button primary>Đăng nhập</Button>
 
-                <Menu items={MENU_ITEMS} onChange={handleChange}>
-                  <div className={styles.iconDots}>
-                    <FontAwesomeIcon icon={faEllipsisVertical} />
-                  </div>
-                </Menu>
-              </>
-            )}
-          </div>
+              <Menu items={MENU_ITEMS} onChange={handleChange}>
+                <div className={styles.iconDots}>
+                  <FontAwesomeIcon icon={faEllipsisVertical} />
+                </div>
+              </Menu>
+            </>
+          )}
         </div>
       </div>
     </div>

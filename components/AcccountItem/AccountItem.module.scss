@@ -1,0 +1,128 @@
+// AccountItem
+.accountItem {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+
+  &:hover {
+    background-color: rgba(22, 24, 35, 0.03);
+  }
+
+  .avatar {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  .account {
+    .userName {
+      color: rgb(22, 24, 35);
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      margin-top: -2px;
+      max-width: 260px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      .iconCheck {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        margin-left: 4px;
+      }
+    }
+
+    .name {
+      color: rgba(22, 24, 35, 0.75);
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 15px;
+      max-width: 260px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 0;
+    }
+  }
+}
+
+// AccountItem Hover
+.accountItemHover {
+  width: 320px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: rgb(255, 255, 255);
+  box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+  border-radius: 8px;
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    align-items: center;
+
+    .avatar {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      margin-right: 12px;
+    }
+  }
+
+  .account {
+    .userName {
+      color: rgb(22, 24, 35);
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 22px;
+      display: flex;
+      align-items: center;
+
+      .iconCheck {
+        position: relative;
+        width: 14px;
+        height: 14px;
+        margin-left: 4px;
+      }
+    }
+
+    .name {
+      color: rgb(22, 24, 35);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    margin-top: 8px;
+
+    .folower,
+    .like {
+      font-weight: 700;
+      margin-right: 6px;
+      font-size: 17px;
+      line-height: 20px;
+      display: inline-block;
+      margin-right: 12px;
+
+      span {
+        color: rgba(22, 24, 35, 0.75);
+        font-size: 17px;
+        line-height: 20px;
+        display: inline-block;
+      }
+    }
+  }
+}

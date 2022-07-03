@@ -9,7 +9,7 @@ function Layout({ children, header = true, sidebar = true }) {
     <div className={styles.wrapper}>
       {header && <Header />}
       <div className={styles.container}>
-        {sidebar && <Sidebar />}
+        <div className={styles.sidebar}>{sidebar && <Sidebar />}</div>
         <div className={styles.content}>{children}</div>
       </div>
     </div>

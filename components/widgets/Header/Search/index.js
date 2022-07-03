@@ -6,16 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import AccountItem from '../AccountItem';
 import searchApi from '../../../../api/searchUser';
 import useDebounce from '../../../../common/hooks/useDebounce';
-import { faMagnifyingGlass, faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from './Search.module.scss';
 
 function Search() {
   const [searchValue, setSearchValue] = useState('');
   const [showResult, setShowResult] = useState(true);
   const [searchResult, setSearchResult] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const inputRef = useRef();
-  const debounced = useDebounce(searchValue, 500);
+  const debounced = useDebounce(searchValue, 700);
 
   // Hàm xử lý
   const handleClear = () => {
@@ -35,9 +36,11 @@ function Search() {
   useEffect(() => {
     if (searchValue.trim()) {
       const searchUser = async () => {
+        setLoading(true);
         try {
           const res = await searchApi.searchUser(encodeURIComponent(debounced));
           setSearchResult(res.data);
+          setLoading(false);
         } catch (error) {
           console.log(error);
         }
@@ -72,12 +75,12 @@ function Search() {
           onFocus={() => setShowResult(true)}
         />
 
-        {!!searchValue && (
+        {!!searchValue && !loading && (
           <button className={styles.btnClear} onClick={handleClear}>
             <FontAwesomeIcon icon={faCircleXmark} />
           </button>
         )}
-        {/* <FontAwesomeIcon className={styles.iconLoading} icon={faSpinner} /> */}
+        {loading && <FontAwesomeIcon className={styles.iconLoading} icon={faSpinner} />}
 
         <button className={styles.btnSearch}>
           <FontAwesomeIcon icon={faMagnifyingGlass} />
