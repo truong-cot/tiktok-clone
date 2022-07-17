@@ -15,6 +15,9 @@ const icons = {
   iconUser: require('../../public/static/icons/iconUser.svg').default,
   iconInstagram: require('../../public/static/icons/iconInstagram.svg').default,
   iconApple: require('../../public/static/icons/iconApple.svg').default,
+  iconPlus: require('../../public/static/icons/iconPlus.svg').default,
+  iconDots: require('../../public/static/icons/iconDots.svg').default,
+  iconLeft: require('../../public/static/icons/iconLeft.svg').default,
 };
 
 export default icons;

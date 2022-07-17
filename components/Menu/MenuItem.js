@@ -1,13 +1,14 @@
-import styles from './Menu.module.scss';
+import React from 'react';
+
 import Button from '../control/Button';
+
+import styles from './Menu.module.scss';
 
 function MenuItem({ data, onClick }) {
   return (
-    // <div className={styles.itemContainer} >
     <Button className={styles.itemContainer} href={data.to} leftIcon={data.icon} onClick={onClick}>
       {data.title}
     </Button>
-    // </div>
   );
 }
 

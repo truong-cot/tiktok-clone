@@ -1,12 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import 'tippy.js/dist/tippy.css';
 import Tippy from '@tippyjs/react/headless';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IoIosCloseCircle } from 'react-icons/io';
+import { BiLoaderAlt } from 'react-icons/bi';
+import { BsSearch } from 'react-icons/bs';
 
-import AccountItem from '../AccountItem';
+import SearchAccount from '../SearchAccount';
 import searchApi from '../../../../api/searchUser';
 import useDebounce from '../../../../common/hooks/useDebounce';
-import { faMagnifyingGlass, faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from './Search.module.scss';
 
 function Search() {
@@ -58,7 +59,7 @@ function Search() {
           <h3 className={styles.title}>Tài khoản</h3>
           <div className={styles.listAccount}>
             {searchResult.map((item) => (
-              <AccountItem key={item.id} data={item} />
+              <SearchAccount key={item.id} data={item} />
             ))}
           </div>
         </div>
@@ -77,13 +78,13 @@ function Search() {
 
         {!!searchValue && !loading && (
           <button className={styles.btnClear} onClick={handleClear}>
-            <FontAwesomeIcon icon={faCircleXmark} />
+            <IoIosCloseCircle />
           </button>
         )}
-        {loading && <FontAwesomeIcon className={styles.iconLoading} icon={faSpinner} />}
+        {loading && <BiLoaderAlt className={styles.iconLoading} />}
 
         <button className={styles.btnSearch}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <BsSearch />
         </button>
       </div>
     </Tippy>

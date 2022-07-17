@@ -1,7 +1,7 @@
-import styles from './AccountItem.module.scss';
+import styles from './SearchAccount.module.scss';
 import Image from 'next/image';
 
-function AccountItem({ data }) {
+function SearchAccount({ data }) {
   return (
     <div className={styles.container}>
       <div className={styles.avatar}>
@@ -15,4 +15,4 @@ function AccountItem({ data }) {
   );
 }
 
-export default AccountItem;
+export default SearchAccount;

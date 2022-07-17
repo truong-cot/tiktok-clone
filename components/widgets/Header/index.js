@@ -3,8 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsisVertical, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import MENU_ITEMS from '../../../common/variables/menuItems';
 import MENU_ITEMS_LOGIN from '../../../common/variables/menuItemLogin';
@@ -52,7 +50,7 @@ function Header() {
           <div className={styles.actions}>
             {isLogin ? (
               <div className={styles.headerLogin}>
-                <Button href="upload" leftIcon={<FontAwesomeIcon icon={faPlus} />} outline2>
+                <Button href="/upload" leftIcon={<Image src={icons.iconPlus} alt="icon plus" />} outline2>
                   Tải lên
                 </Button>
 
@@ -76,7 +74,7 @@ function Header() {
               </div>
             ) : (
               <>
-                <Button href="/upload" text>
+                <Button onClick={handleLogin} text>
                   Tải lên
                 </Button>
                 <Button primary onClick={handleLogin}>
@@ -85,7 +83,7 @@ function Header() {
 
                 <Menu items={MENU_ITEMS} onChange={handleChange}>
                   <div className={styles.iconDots}>
-                    <FontAwesomeIcon icon={faEllipsisVertical} />
+                    <Image src={icons.iconDots} alt="icon dots" />
                   </div>
                 </Menu>
               </>
