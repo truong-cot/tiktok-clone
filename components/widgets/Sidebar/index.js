@@ -14,7 +14,7 @@ function SideBar() {
   const [showPopupRegister, setShowPopupRegister] = useState(false);
 
   // Check Login
-  const isLogin = true;
+  const isLogin = false;
 
   return (
     <Fragment>
@@ -23,7 +23,7 @@ function SideBar() {
 
         {!isLogin && <div className={styles.line}></div>}
 
-        {isLogin && (
+        {!isLogin && (
           <div className={styles.login}>
             <p className={styles.des}>Đăng nhập để follow các tác giả, thích video và xem bình luận.</p>
             <Button className={styles.btnLogin} outline onClick={() => setShowPopupLogin(true)}>
@@ -39,10 +39,12 @@ function SideBar() {
 
         <div className={styles.line}></div>
 
-        <div className={styles.followingAccounts}>
-          <p className={styles.title}>Tài khoản đang theo dõi</p>
-          <FollowingAccounts />
-        </div>
+        {isLogin && (
+          <div className={styles.followingAccounts}>
+            <p className={styles.title}>Tài khoản đang theo dõi</p>
+            <FollowingAccounts />
+          </div>
+        )}
       </div>
 
       {/* Popup Login */}
