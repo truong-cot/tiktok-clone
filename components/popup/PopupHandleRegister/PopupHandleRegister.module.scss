@@ -1,0 +1,133 @@
+.container {
+  position: relative;
+  width: 484px;
+  max-height: 80vh;
+  padding-top: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .title {
+    color: rgb(22, 24, 35);
+    font-family: 'IBM Plex Sans', SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    font-size: 32px;
+    margin-bottom: 32px;
+    font-weight: bold;
+  }
+
+  .listOption {
+    overflow: scroll;
+
+    .option {
+      position: relative;
+      border: 1px solid rgba(22, 24, 35, 0.12);
+      height: 44px;
+      width: 380px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all 0.5s linear;
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      .icon {
+        position: absolute;
+        left: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+      }
+
+      .text {
+        color: rgb(22, 24, 35);
+        font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+      }
+    }
+  }
+
+  .policy {
+    padding: 16px 48px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgba(22, 24, 35, 0.12);
+    border-top-color: rgba(22, 24, 35, 0.12);
+    border-right-color: rgba(22, 24, 35, 0.12);
+    border-left-color: rgba(22, 24, 35, 0.12);
+
+    .text {
+      text-align: center;
+      color: rgba(22, 24, 35, 0.5);
+      font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+      font-size: 12px;
+      line-height: 15px;
+
+      a {
+        color: rgb(22, 24, 35);
+        padding: 0 4px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .register {
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    width: 100%;
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .text {
+      color: rgb(22, 24, 35);
+      font-size: 15px;
+      line-height: 18px;
+    }
+
+    .link {
+      margin-left: 5px;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 18px;
+      color: rgb(254, 44, 85);
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .iconClose {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    background-color: rgba(22, 24, 35, 0.03);
+    transition: all 0.1s linear;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}

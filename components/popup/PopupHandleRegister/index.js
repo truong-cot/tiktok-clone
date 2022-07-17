@@ -4,19 +4,18 @@ import { IoCloseOutline } from 'react-icons/io5';
 
 import icons from '../../../assets/icons';
 
-import styles from './PopupHandleLogin.module.scss';
+import styles from './PopupHandleRegister.module.scss';
 
-function PopupHandleLogin({ onClosePopupLogin, onOpenPopupRegister }) {
-  // handle register
-  const handleRegister = () => {
-    // hide popup login
-    onClosePopupLogin();
-    onOpenPopupRegister();
+function PopupHandleRegister({ onClosePopupRegister, onOpenPopupLogin }) {
+  // handle login
+  const handleLogin = () => {
+    onClosePopupRegister();
+    onOpenPopupLogin();
   };
 
   return (
     <div className={styles.container}>
-      <h3 className={styles.title}>Đăng nhập vào TikTok</h3>
+      <h3 className={styles.title}>Đăng ký TikTok</h3>
 
       <div className={styles.listOption}>
         <div className={styles.option}>
@@ -55,18 +54,25 @@ function PopupHandleLogin({ onClosePopupLogin, onOpenPopupRegister }) {
         </div>
       </div>
 
-      <div className={styles.register}>
-        <p className={styles.text}>Bạn không có tài khoản?</p>
-        <p className={styles.link} onClick={handleRegister}>
-          Đăng kí
+      <div className={styles.policy}>
+        <p className={styles.text}>
+          Bằng cách tiếp tục, bạn đồng ý với<a href="#"> Điều khoản Sử dụng</a>
+          của TikTok và xác nhận rằng bạn đã đọc hiểu<a href="#">Chính sách Quyền riêng tư</a>của TikTok.
         </p>
       </div>
 
-      <div className={styles.iconClose} onClick={onClosePopupLogin}>
+      <div className={styles.register}>
+        <p className={styles.text}>Bạn đã có tài khoản?</p>
+        <p className={styles.link} onClick={handleLogin}>
+          Đăng nhập
+        </p>
+      </div>
+
+      <div className={styles.iconClose} onClick={onClosePopupRegister}>
         <IoCloseOutline />
       </div>
     </div>
   );
 }
 
-export default PopupHandleLogin;
+export default PopupHandleRegister;

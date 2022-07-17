@@ -14,11 +14,13 @@ import Search from './Search';
 import Button from '../../control/Button';
 import icons from '../../../assets/icons';
 import PopupHandleLogin from './../../popup/PopupHandleLogin';
+import PopupHandleRegister from './../../popup/PopupHandleRegister';
 
 import styles from './Header.module.scss';
 
 function Header() {
   const [showPopupLogin, setShowPopupLogin] = useState(false);
+  const [showPopupRegister, setShowPopupRegister] = useState(false);
 
   // Check login
   const isLogin = false;
@@ -94,7 +96,18 @@ function Header() {
 
       {/* Popup Login */}
       <Popup onClose={() => setShowPopupLogin(false)} open={showPopupLogin}>
-        <PopupHandleLogin onClosePopupLogin={() => setShowPopupLogin(false)} />
+        <PopupHandleLogin
+          onClosePopupLogin={() => setShowPopupLogin(false)}
+          onOpenPopupRegister={() => setShowPopupRegister(true)}
+        />
+      </Popup>
+
+      {/* Popup Register */}
+      <Popup onClose={() => setShowPopupRegister(false)} open={showPopupRegister}>
+        <PopupHandleRegister
+          onClosePopupRegister={() => setShowPopupRegister(false)}
+          onOpenPopupLogin={() => setShowPopupLogin(true)}
+        />
       </Popup>
     </Fragment>
   );

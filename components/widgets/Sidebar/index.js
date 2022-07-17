@@ -3,6 +3,7 @@ import NavLink from './NavLink';
 
 import Popup from '../../popup';
 import PopupHandleLogin from '../../popup/PopupHandleLogin';
+import PopupHandleRegister from '../../popup/PopupHandleRegister';
 import FollowingAccounts from './FollowingAccounts';
 import RecommendedAccount from './RecommendedAccount';
 import styles from './Sidebar.module.scss';
@@ -10,6 +11,7 @@ import Button from '../../control/Button';
 
 function SideBar() {
   const [showPopupLogin, setShowPopupLogin] = useState(false);
+  const [showPopupRegister, setShowPopupRegister] = useState(false);
 
   // Check Login
   const isLogin = true;
@@ -43,8 +45,20 @@ function SideBar() {
         </div>
       </div>
 
+      {/* Popup Login */}
       <Popup onClose={() => setShowPopupLogin(false)} open={showPopupLogin}>
-        <PopupHandleLogin onClosePopupLogin={() => setShowPopupLogin(false)} />
+        <PopupHandleLogin
+          onClosePopupLogin={() => setShowPopupLogin(false)}
+          onOpenPopupRegister={() => setShowPopupRegister(true)}
+        />
+      </Popup>
+
+      {/* Popup Register */}
+      <Popup onClose={() => setShowPopupRegister(false)} open={showPopupRegister}>
+        <PopupHandleRegister
+          onClosePopupRegister={() => setShowPopupRegister(false)}
+          onOpenPopupLogin={() => setShowPopupLogin(true)}
+        />
       </Popup>
     </Fragment>
   );
