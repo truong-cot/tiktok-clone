@@ -4,7 +4,30 @@
   .line {
     width: 100%;
     height: 1px;
-    background-color: #ccc;
+    background-color: rgba(22, 24, 35, 0.12);
+  }
+
+  .login {
+    border-top: 1px solid rgba(22, 24, 35, 0.12);
+    border-bottom: 1px solid rgba(22, 24, 35, 0.12);
+    padding: 20px 0 24px 8px;
+
+    .des {
+      color: rgba(22, 24, 35, 0.5);
+      font-size: 16px;
+      line-height: 22px;
+      padding-bottom: 20px;
+    }
+
+    .btnLogin {
+      font-family: SofiaPro, PingFangSC, sans-serif;
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: 600;
+      width: 100%;
+      min-width: 168px;
+      min-height: 48px;
+    }
   }
 
   .title {

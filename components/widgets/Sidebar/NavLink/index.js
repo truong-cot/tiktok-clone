@@ -4,8 +4,8 @@ import Image from 'next/image';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 
-// import images from '../../../../assets/images';
-import images from '../../../../assets/images';
+// import icons from '../../../../assets/icons';
+import icons from '../../../../assets/icons';
 import styles from './NavLink.module.scss';
 
 function NavLink() {
@@ -13,20 +13,20 @@ function NavLink() {
 
   const listNav = [
     {
-      icon: images.iconHome,
-      iconActive: images.iconHomeActive,
+      icon: icons.iconHome,
+      iconActive: icons.iconHomeActive,
       title: 'Dành cho bạn',
       href: '/',
     },
     {
-      icon: images.iconFolowing,
-      iconActive: images.iconFolowingActive,
+      icon: icons.iconFolowing,
+      iconActive: icons.iconFolowingActive,
       title: 'Đang follow',
       href: '/following',
     },
     {
-      icon: images.iconLive,
-      iconActive: images.iconLiveActive,
+      icon: icons.iconLive,
+      iconActive: icons.iconLiveActive,
       title: 'LIVE',
       href: '/live',
     },
