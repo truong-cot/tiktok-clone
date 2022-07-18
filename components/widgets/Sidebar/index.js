@@ -14,14 +14,12 @@ function SideBar() {
   const [showPopupRegister, setShowPopupRegister] = useState(false);
 
   // Check Login
-  const isLogin = false;
+  const isLogin = true;
 
   return (
     <Fragment>
       <div className={styles.sideBar}>
         <NavLink />
-
-        {!isLogin && <div className={styles.line}></div>}
 
         {!isLogin && (
           <div className={styles.login}>
