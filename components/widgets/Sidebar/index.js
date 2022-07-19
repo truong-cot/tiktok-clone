@@ -14,7 +14,7 @@ function SideBar() {
   const [showPopupRegister, setShowPopupRegister] = useState(false);
 
   // Check Login
-  const isLogin = true;
+  const isLogin = false;
 
   return (
     <Fragment>
