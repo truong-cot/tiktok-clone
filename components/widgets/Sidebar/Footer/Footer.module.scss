@@ -1,0 +1,64 @@
+.container {
+  .item {
+    margin-bottom: 8px;
+
+    .tippy {
+      padding: 15px 16px 20px;
+      width: fit-content;
+      max-width: 200px;
+      background-color: rgb(255, 255, 255);
+      box-shadow: rgb(0 0 0 / 12%) 0px 4px 16px;
+      border-radius: 8px;
+
+      .link {
+        color: #000;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        text-decoration: none;
+
+        &:hover {
+          color: rgb(254, 44, 85);
+        }
+      }
+    }
+
+    a {
+      color: rgba(22, 24, 35, 0.5);
+      font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 17px;
+      display: inline-block;
+      margin-right: 6px;
+      margin-top: 5px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .des {
+      color: rgba(22, 24, 35, 0.5);
+      font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 17px;
+      display: inline-block;
+      margin-right: 6px;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
+    .span {
+      color: rgba(22, 24, 35, 0.5);
+      font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 17px;
+      display: inline-block;
+      margin-right: 6px;
+      margin-top: 5px;
+    }
+  }
+}

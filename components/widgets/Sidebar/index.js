@@ -8,6 +8,8 @@ import FollowingAccounts from './FollowingAccounts';
 import RecommendedAccount from './RecommendedAccount';
 import styles from './Sidebar.module.scss';
 import Button from '../../control/Button';
+import Hashtag from './Hashtag';
+import Footer from './Footer';
 
 function SideBar() {
   const [showPopupLogin, setShowPopupLogin] = useState(false);
@@ -43,6 +45,15 @@ function SideBar() {
             <FollowingAccounts />
           </div>
         )}
+
+        <div className={styles.hashtag}>
+          <p className={styles.titleHashtag}>Khám phá</p>
+          <Hashtag />
+        </div>
+
+        <div className={styles.footer}>
+          <Footer />
+        </div>
       </div>
 
       {/* Popup Login */}

@@ -42,3 +42,22 @@
 .recommendedAccount {
   border-top: 1px solid rgba(22, 24, 35, 0.12);
 }
+
+.hashtag {
+  padding: 16px 8px 8px 8px;
+
+  .titleHashtag {
+    padding-bottom: 16px;
+    color: rgba(22, 24, 35, 0.75);
+    font-family: 'IBM Plex Sans', ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    padding-bottom: 16px;
+  }
+}
+
+.footer {
+  padding: 16px 8px 8px 8px;
+  border-top: 1px solid rgba(22, 24, 35, 0.12);
+}

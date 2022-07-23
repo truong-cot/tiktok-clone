@@ -18,6 +18,8 @@ const icons = {
   iconPlus: require('../../public/static/icons/iconPlus.svg').default,
   iconDots: require('../../public/static/icons/iconDots.svg').default,
   iconLeft: require('../../public/static/icons/iconLeft.svg').default,
+  iconHashtag: require('../../public/static/icons/iconHashtag.svg').default,
+  iconMusic: require('../../public/static/icons/iconMusic.svg').default,
 };
 
 export default icons;
